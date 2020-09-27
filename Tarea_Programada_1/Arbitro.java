@@ -1,4 +1,5 @@
-
+import java.util.Arrays;
+        
 public class Arbitro
 {   
     private Configuracion configuracion;
@@ -7,6 +8,7 @@ public class Arbitro
     private Tablero tablero;
     private int cantTubosVisibles;
     private int cantMovimientos;
+    private String[] opciones;
 
     public Arbitro(Configuracion configuracion){
         this.configuracion = configuracion;
@@ -16,6 +18,11 @@ public class Arbitro
                                     computadora.generarDistribucion());
         this.cantMovimientos = 0;
         this.interfaz = new Interfaz("");
+        this.opciones = new String[cantTubosVisibles];
+        for (int i=0; i<cantTubosVisibles; i++)
+        {
+            this.opciones[i] = Integer.toString(i+1);
+        }
     }
     
     public boolean trasvasarBola(int tuboSalida, int tuboEntrada){
@@ -41,7 +48,33 @@ public class Arbitro
     }
     
     public void mostrarTablero(){
-        this.interfaz.decirMensaje(this.tablero.toString(4));
+        this.interfaz.decirMensaje(this.tablero.toString(cantTubosVisibles));
+    }
+    
+    public void jugar(){
+        int tuboSalida;
+        int tuboEntrada;
+        do{
+            tuboSalida = this.interfaz.pedirOpcion(this.opciones,
+                        "Escoge el tubo del que vas a tomar una bola\n\n"+
+                        this.tablero.toString(cantTubosVisibles));
+            if (tuboSalida != -1)
+            {
+                do{
+                    tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
+                            "Escoge el tubo en el que la quieres meter\n\n"+
+                            this.tablero.toString(cantTubosVisibles));
+                }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
+                if (tuboEntrada!=-1)
+                {
+                    if (!this.trasvasarBola(tuboSalida,tuboEntrada)){
+                        interfaz.decirMensaje("Movimiento invalido!");
+                    }
+                }else{
+                    tuboSalida=-1;
+                }
+            }
+        }while(tuboSalida!=-1);
     }
     
     public void revisarEstadoJuego(){

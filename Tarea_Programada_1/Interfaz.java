@@ -73,7 +73,7 @@ public class Interfaz extends JOptionPane
      * @param elMensaje El mensaje mostrado al usuario en la interaccion.
      * @return La opcion seleccionada.
      */
-    public int perdirOpcion(String[] lasOpciones, String elMensaje)
+    public int pedirOpcion(String[] lasOpciones, String elMensaje)
     {
         int resultado;
         resultado = this.showOptionDialog(null, elMensaje, TITULO, DEFAULT_OPTION, PLAIN_MESSAGE, IMAGEN, lasOpciones, null);

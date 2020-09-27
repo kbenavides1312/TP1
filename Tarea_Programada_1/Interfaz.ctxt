@@ -16,6 +16,6 @@ comment5.params=elMensaje
 comment5.target=int\ confirmarDato(java.lang.String)
 comment5.text=\r\n\ Confirma\ con\ el\ usuario\ la\ opcion\ que\ ha\ tomado\r\n\ \r\n\ @param\ elMensaje\ El\ mensaje\ mostrado\ al\ usuario\ en\ la\ interaccion.\r\n\ @return\ La\ opcion\ seleccionada.\r\n
 comment6.params=lasOpciones\ elMensaje
-comment6.target=int\ perdirOpcion(java.lang.String[],\ java.lang.String)
+comment6.target=int\ pedirOpcion(java.lang.String[],\ java.lang.String)
 comment6.text=\r\n\ Pide\ al\ usuario\ elegir\ entre\ un\ conjunto\ de\ opciones\r\n\ \r\n\ @param\ lasOpciones\ Las\ opciones\ entre\ las\ cuales\ el\ usuario\ debe\ elegir.\r\n\ @param\ elMensaje\ El\ mensaje\ mostrado\ al\ usuario\ en\ la\ interaccion.\r\n\ @return\ La\ opcion\ seleccionada.\r\n
 numComments=7

@@ -58,16 +58,21 @@ public class Tablero
     
     public String toString(int cantTubosVisibles){
         String result = "";
-        for (int i=0; i<cantTubosVisibles; i++)
+        for (int i=1; i<=cantTubosVisibles; i++)
         {
             result += "   " + i + "   ";
         }
-        for (int j=0; j<configuracion.tamanoTubo; j++)
+        for (int j=configuracion.tamanoTubo-1; j>=0; j--)
         {
             result += "\n";
             for (int i=0; i<cantTubosVisibles; i++)
             {
-                result += "   " + configuracion.colores[tubos[i][j]] + "   ";
+                if (tubos[i][j] != -1)
+                {
+                    result += "   " + configuracion.colores[tubos[i][j]] + "   ";
+                }else{
+                    result += "   --   ";
+                }
             }
         }
         return result;
