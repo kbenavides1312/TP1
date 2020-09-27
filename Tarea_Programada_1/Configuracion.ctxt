@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Configuracion
+comment1.params=colores\ tamanoTubo\ cantTubosVacios\ cantTubosVisibles
+comment1.target=Configuracion(java.lang.String[],\ int,\ int,\ int)
+numComments=2

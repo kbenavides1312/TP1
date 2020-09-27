@@ -6,6 +6,18 @@ public class Interfaz extends JOptionPane
     private String TITULO;
     private ImageIcon IMAGEN;
     
+    
+    /**
+     * Crea el objeto, el titulo y la imagen que seran usadas en ventanas
+     * 
+     * @param elTitulo El itulo de ventanas.
+     */
+    public Interfaz(String elTitulo)
+    {
+        TITULO = elTitulo;
+    }
+    
+    
     /**
      * Crea el objeto, el titulo y la imagen que seran usadas en ventanas
      * 
