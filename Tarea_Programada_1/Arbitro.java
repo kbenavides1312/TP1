@@ -15,7 +15,7 @@ public class Arbitro
         this.computadora = new Computadora(cantColores,tamanoTubo);
         this.tablero = new Tablero(cantColores, tamanoTubo, computadora.generarDistribucion(), cantTubosVacios);
         this.movimientos = 0;
-        this.tubosVisibles = tubosVisibles
+        this.tubosVisibles = tubosVisibles;
     }
     
     public boolean trasvasarBola(int tuboSalida, int tuboEntrada){
