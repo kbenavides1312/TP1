@@ -18,8 +18,16 @@ public class Interfaz extends JOptionPane
         IMAGEN = new ImageIcon(this.getClass().getResource(nombreArchivoImagen));
     }
     
-    public void decirMensaje(){
+     /**
+     * Muestra un mensaje
+     * 
+     * @param elMensaje El mensaje mostrado al usuario en la interaccion.
+     */
+    public void decirMensaje(String elMensaje)
+    {
+        this.showMessageDialog(null, elMensaje, TITULO, PLAIN_MESSAGE, IMAGEN);
     }
+    
     public void pedirDato(){
     }
     public void confirmarDato(){
