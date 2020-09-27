@@ -53,7 +53,19 @@ public class Interfaz extends JOptionPane
         resultado = this.showConfirmDialog(null, elMensaje, TITULO, OK_CANCEL_OPTION);
         return resultado;
     }
-    public void perdirOpcion(){
+    
+    /**
+     * Pide al usuario elegir entre un conjunto de opciones
+     * 
+     * @param lasOpciones Las opciones entre las cuales el usuario debe elegir.
+     * @param elMensaje El mensaje mostrado al usuario en la interaccion.
+     * @return La opcion seleccionada.
+     */
+    public int perdirOpcion(String[] lasOpciones, String elMensaje)
+    {
+        int resultado;
+        resultado = this.showOptionDialog(null, elMensaje, TITULO, DEFAULT_OPTION, PLAIN_MESSAGE, IMAGEN, lasOpciones, null);
+        return resultado;
     }
  
 }
