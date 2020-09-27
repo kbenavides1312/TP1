@@ -3,21 +3,26 @@ public class Arbitro
 {   
     private int cantColores;
     private int tamanoTubo;
+    private int movimientos;
+    private int tubosVisibles;
     private Computadora computadora;
     private Tablero tablero;
     private int cantidadMovimientos;
 
-    public Arbitro(int cantColores, int tamanoTubo, int cantTubosVacios){
+    public Arbitro(int cantColores, int tamanoTubo, int cantTubosVacios, int tubosVisibles){
         this.cantColores = cantColores;
         this.tamanoTubo = tamanoTubo;
         this.computadora = new Computadora(cantColores,tamanoTubo);
         this.tablero = new Tablero(cantColores, tamanoTubo, computadora.generarDistribucion(), cantTubosVacios);
+        this.movimientos = 0;
+        this.tubosVisibles = tubosVisibles
     }
     
     public boolean trasvasarBola(int tuboSalida, int tuboEntrada){
         int bola;
         bola = tablero.quitarBola(tuboSalida);
         if (tablero.agregarBola(tuboEntrada, bola)){
+            this.movimientos++;
             return true;
         }else{
             tablero.agregarBola(tuboSalida, bola);
@@ -25,7 +30,14 @@ public class Arbitro
         }
     }
     
-    public void agregarTercerTubo(){
+    public boolean agregarTuboExtra(){
+        if (tubosVisibles<tubos.length){
+            this.movimientos += 5;
+            this.tubosVisibles++;
+            return true;
+        }else{
+            return false;
+        }
     }
     
     public void revisarEstadoJuego(){
