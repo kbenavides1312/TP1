@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Computadora
-comment1.params=cantColores\ tamanoTubo
-comment1.target=Computadora(int,\ int)
+comment1.params=configuracion
+comment1.target=Computadora(Configuracion)
 comment1.text=\r\n\ Crea\ el\ objeto\r\n\ \r\n\ @param\ cantColores\ cantidad\ de\ colores\ diferentes\r\n\ @param\ tamanoTubo\ cantidad\ de\ tubos\r\n
 comment2.params=
 comment2.target=int[]\ generarDistribucion()

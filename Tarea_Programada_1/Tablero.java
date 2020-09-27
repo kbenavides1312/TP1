@@ -8,6 +8,7 @@ public class Tablero
     private int[] nivelesCompletos;
     
     public Tablero(Configuracion configuracion ,int[] distribucion){
+        this.configuracion = configuracion;
         this.tubos = new int[configuracion.cantTubos][configuracion.tamanoTubo];
         niveles = new int[configuracion.cantTubos];
         nivelesCompletos = new int[configuracion.cantTubos];
@@ -55,8 +56,20 @@ public class Tablero
         return bola;
     }
     
-    public String toString(){
+    public String toString(int cantTubosVisibles){
         String result = "";
+        for (int i=0; i<cantTubosVisibles; i++)
+        {
+            result += "   " + i + "   ";
+        }
+        for (int j=0; j<configuracion.tamanoTubo; j++)
+        {
+            result += "\n";
+            for (int i=0; i<cantTubosVisibles; i++)
+            {
+                result += "   " + configuracion.colores[tubos[i][j]] + "   ";
+            }
+        }
         return result;
     }
     

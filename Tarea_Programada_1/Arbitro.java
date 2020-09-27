@@ -11,7 +11,7 @@ public class Arbitro
     public Arbitro(Configuracion configuracion){
         this.configuracion = configuracion;
         this.cantTubosVisibles = configuracion.cantTubosVisibles;
-        this.computadora = new Computadora(configuracion.cantColores,configuracion.tamanoTubo);
+        this.computadora = new Computadora(configuracion);
         this.tablero = new Tablero(configuracion,
                                     computadora.generarDistribucion());
         this.cantMovimientos = 0;
@@ -41,7 +41,7 @@ public class Arbitro
     }
     
     public void mostrarTablero(){
-        
+        this.interfaz.decirMensaje(this.tablero.toString(4));
     }
     
     public void revisarEstadoJuego(){
