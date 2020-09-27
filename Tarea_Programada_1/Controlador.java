@@ -40,7 +40,15 @@ public class Controlador
             }
         }while(opcion < 1);
     }
-    public void main(){
+    
+    /**
+     * Funcion main
+     * 
+     */
+    public void main(String[] parametros){
+        Controlador controlador;
+        controlador = new Controlador();
+        controlador.iniciar();
     }
     
 
