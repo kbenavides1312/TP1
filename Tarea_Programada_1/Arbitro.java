@@ -2,6 +2,7 @@
 public class Arbitro
 {   
     private int cantColores;
+    private int cantTubos;
     private int tamanoTubo;
     private int movimientos;
     private int tubosVisibles;
@@ -10,6 +11,7 @@ public class Arbitro
     private int cantidadMovimientos;
 
     public Arbitro(int cantColores, int tamanoTubo, int cantTubosVacios, int tubosVisibles){
+        this.cantTubos = cantColores+cantTubosVacios;
         this.cantColores = cantColores;
         this.tamanoTubo = tamanoTubo;
         this.computadora = new Computadora(cantColores,tamanoTubo);
@@ -31,7 +33,7 @@ public class Arbitro
     }
     
     public boolean agregarTuboExtra(){
-        if (tubosVisibles<tubos.length){
+        if (tubosVisibles<cantTubos){
             this.movimientos += 5;
             this.tubosVisibles++;
             return true;
