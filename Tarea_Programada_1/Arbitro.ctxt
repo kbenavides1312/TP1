@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Arbitro
-comment1.params=configuracion
-comment1.target=Arbitro(Configuracion)
+comment1.params=interfaz\ configuracion
+comment1.target=Arbitro(Interfaz,\ Configuracion)
 comment2.params=tuboSalida\ tuboEntrada
 comment2.target=boolean\ trasvasarBola(int,\ int)
 comment3.params=

@@ -2,6 +2,7 @@
 comment0.target=Controlador
 comment1.params=
 comment1.target=Controlador()
+comment1.text=\r\n\ Crea\ el\ objeto,\ la\ interfaz\ y\ al\ arbitro\r\n\ \r\n
 comment2.params=
 comment2.target=void\ interfaz()
 comment3.params=

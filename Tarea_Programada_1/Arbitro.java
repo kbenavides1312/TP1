@@ -10,14 +10,14 @@ public class Arbitro
     private int cantMovimientos;
     private String[] opciones;
 
-    public Arbitro(Configuracion configuracion){
+    public Arbitro(Interfaz interfaz, Configuracion configuracion){
         this.configuracion = configuracion;
         this.cantTubosVisibles = configuracion.cantTubosVisibles;
         this.computadora = new Computadora(configuracion);
         this.tablero = new Tablero(configuracion,
                                     computadora.generarDistribucion());
         this.cantMovimientos = 0;
-        this.interfaz = new Interfaz("");
+        this.interfaz = interfaz;
         this.opciones = new String[cantTubosVisibles];
         for (int i=0; i<cantTubosVisibles; i++)
         {
