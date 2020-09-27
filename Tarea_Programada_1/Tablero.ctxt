@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Tablero
+comment1.params=
+comment1.target=Tablero()
+comment2.params=
+comment2.target=void\ tubos()
+comment3.params=
+comment3.target=void\ cantidadMovimientos()
+comment4.params=
+comment4.target=void\ trasvasarBola()
+comment5.params=
+comment5.target=void\ agregarTercerTubo()
+comment6.params=
+comment6.target=void\ revisarEstadoJuego()
+numComments=7
