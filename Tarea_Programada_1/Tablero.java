@@ -22,6 +22,7 @@ public class Tablero
         Arrays.fill(niveles, 0);
         Arrays.fill(nivelesCompletos, 0);
     }
+    
     public boolean agregarBola(int numeroTubo, int color){
         if (niveles[numeroTubo]<tamanoTubo){
             tubos[numeroTubo][niveles[numeroTubo]]= color;
@@ -35,8 +36,22 @@ public class Tablero
         }
         
     }
-    public void quitarBola(){
+    
+    public int quitarBola(int numeroTubo){
+        int bola;
+        if (niveles[numeroTubo]>0){
+            if (nivelesCompletos[numeroTubo]==niveles[numeroTubo]){
+                nivelesCompletos[numeroTubo]--;
+            }
+            bola = tubos[numeroTubo][niveles[numeroTubo]];
+            tubos[numeroTubo][niveles[numeroTubo]] = -1;
+            niveles[numeroTubo]--;
+        }else{
+            bola = -1;
+        }
+        return bola;
     }
+    
     public void obtenerNivel(){
     }
 }
