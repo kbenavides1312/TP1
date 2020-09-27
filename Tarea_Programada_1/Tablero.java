@@ -1,17 +1,32 @@
+import java.util.Arrays;
 
 public class Tablero
-{   
+{
+    private int[][] tubos;
+    private int tamanoTubo;
+    private int[] niveles;
+    private int[] nivelesCompletos;
     
-    public Tablero(){
+    public Tablero(int cantColores, int tamanoTubo,int[] distribucion, int cantTubosVacios){
+        this.tubos = new int[cantColores+cantTubosVacios][tamanoTubo];
+        int color;
+        for (int i=0; i<cantColores; i++){
+            for (int j=0; j<tamanoTubo; j++){ //distribuye las pelotas entre los tubos
+                color=distribucion[i*tamanoTubo+j];
+                this.agregarBola(i,color);
+            }
+        }
+        for (int i=cantColores; i<tubos.length; i++){
+            Arrays.fill(tubos[i], -1);
+        }
+        Arrays.fill(niveles, 0);
+        Arrays.fill(nivelesCompletos, 0);
     }
-    private void tubos(){
+    public void agregarBola(int numeroTubo, int color){
+        
     }
-    private void cantidadMovimientos(){
+    public void quitarBola(){
     }
-    public void trasvasarBola(){
+    public void obtenerNivel(){
     }
-    public void agregarTercerTubo(){
-    }
-    public void revisarEstadoJuego(){
-    }
-}   
+}

@@ -24,7 +24,7 @@ public class Computadora
     public int[] generarDistribucion(){
         int cantBolas = cantColores * tamanoTubo;
         int[] restantesColores = new int[cantColores];
-        Arrays.fill(restantesColores, 4);
+        Arrays.fill(restantesColores, tamanoTubo);
         int[] distribucion = new int[cantBolas];
         int nuevaBola;
         int indice = 0;
