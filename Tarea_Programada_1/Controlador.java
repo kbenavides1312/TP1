@@ -25,11 +25,20 @@ public class Controlador
         
     }
     
-    private void interfaz(){
-    }
-    private void tablero(){
-    }
+    /**
+     * Interactua con el usuario usando el menu principal
+     * 
+     */
     public void iniciar(){
+        int opcion;
+        do {
+            opcion = interfaz.pedirOpcion(OPCIONES, MENSAJE);
+            switch (opcion) {
+                case 0: 
+                    arbitro.jugar();
+                    break;
+            }
+        }while(opcion < 1);
     }
     public void main(){
     }
