@@ -22,7 +22,17 @@ public class Tablero
         Arrays.fill(niveles, 0);
         Arrays.fill(nivelesCompletos, 0);
     }
-    public void agregarBola(int numeroTubo, int color){
+    public boolean agregarBola(int numeroTubo, int color){
+        if (niveles[numeroTubo]<tamanoTubo){
+            tubos[numeroTubo][niveles[numeroTubo]]= color;
+            niveles[numeroTubo]++;
+            if (nivelesCompletos[numeroTubo]==niveles[numeroTubo] && color==tubos[numeroTubo][0]){
+                nivelesCompletos[numeroTubo]++;
+            }
+            return true;
+        }else{
+            return false;
+        }
         
     }
     public void quitarBola(){
