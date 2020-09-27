@@ -28,8 +28,19 @@ public class Interfaz extends JOptionPane
         this.showMessageDialog(null, elMensaje, TITULO, PLAIN_MESSAGE, IMAGEN);
     }
     
-    public void pedirDato(){
+    /**
+     * Pide al usuario insertar un dato por medio del teclado
+     * 
+     * @param elMensaje El mensaje mostrado al usuario en la interaccion.
+     * @return La hilera insertada por el usuario.
+     */
+    public String pedirDato(String elMensaje)
+    {
+        String resultado;
+        resultado = this.showInputDialog(null, elMensaje, TITULO, PLAIN_MESSAGE);
+        return resultado;
     }
+    
     public void confirmarDato(){
     }
     public void perdirOpcion(){
