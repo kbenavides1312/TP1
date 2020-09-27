@@ -41,7 +41,17 @@ public class Interfaz extends JOptionPane
         return resultado;
     }
     
-    public void confirmarDato(){
+    /**
+     * Confirma con el usuario la opcion que ha tomado
+     * 
+     * @param elMensaje El mensaje mostrado al usuario en la interaccion.
+     * @return La opcion seleccionada.
+     */
+    public int confirmarDato(String elMensaje)
+    {
+        int resultado;
+        resultado = this.showConfirmDialog(null, elMensaje, TITULO, OK_CANCEL_OPTION);
+        return resultado;
     }
     public void perdirOpcion(){
     }

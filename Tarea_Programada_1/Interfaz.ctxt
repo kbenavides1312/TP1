@@ -1,13 +1,17 @@
 #BlueJ class context
 comment0.target=Interfaz
-comment1.params=
-comment1.target=Interfaz()
-comment2.params=
-comment2.target=void\ decirMensaje()
-comment3.params=
-comment3.target=void\ pedirDato()
-comment4.params=
-comment4.target=void\ confirmarDato()
+comment1.params=elTitulo\ nombreArchivoImagen
+comment1.target=Interfaz(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Crea\ el\ objeto,\ el\ titulo\ y\ la\ imagen\ que\ seran\ usadas\ en\ ventanas\r\n\ \r\n\ @param\ elTitulo\ El\ itulo\ de\ ventanas.\r\n\ @param\ nombreArchivoImagen\ El\ nombre\ del\ archivo\ de\ imagen.\r\n
+comment2.params=elMensaje
+comment2.target=void\ decirMensaje(java.lang.String)
+comment2.text=\r\n\ Muestra\ un\ mensaje\r\n\ \r\n\ @param\ elMensaje\ El\ mensaje\ mostrado\ al\ usuario\ en\ la\ interaccion.\r\n
+comment3.params=elMensaje
+comment3.target=java.lang.String\ pedirDato(java.lang.String)
+comment3.text=\r\n\ Pide\ al\ usuario\ insertar\ un\ dato\ por\ medio\ del\ teclado\r\n\ \r\n\ @param\ elMensaje\ El\ mensaje\ mostrado\ al\ usuario\ en\ la\ interaccion.\r\n\ @return\ La\ hilera\ insertada\ por\ el\ usuario.\r\n
+comment4.params=elMensaje
+comment4.target=int\ confirmarDato(java.lang.String)
+comment4.text=\r\n\ Confirma\ con\ el\ usuario\ la\ opcion\ que\ ha\ tomado\r\n\ \r\n\ @param\ elMensaje\ El\ mensaje\ mostrado\ al\ usuario\ en\ la\ interaccion.\r\n\ @return\ La\ opcion\ seleccionada.\r\n
 comment5.params=
 comment5.target=void\ perdirOpcion()
 numComments=6
