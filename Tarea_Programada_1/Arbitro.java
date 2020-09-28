@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import javax.swing.JTextArea;
+import javax.swing.JOptionPane;
         
 public class Arbitro
 {   
@@ -47,23 +49,21 @@ public class Arbitro
         }
     }
     
-    public void mostrarTablero(){
-        this.interfaz.decirMensaje(this.tablero.toString(cantTubosVisibles));
-    }
-    
     public void jugar(){
         int tuboSalida;
         int tuboEntrada;
         do{
             tuboSalida = this.interfaz.pedirOpcion(this.opciones,
-                        "Escoge el tubo del que vas a tomar una bola\n\n"+
-                        this.tablero.toString(cantTubosVisibles));
+                        "Escoge el tubo del que vas a tomar una bola",
+                        this.tablero.toString(cantTubosVisibles), 
+                        cantTubosVisibles);
             if (tuboSalida != -1)
             {
                 do{
                     tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
-                            "Escoge el tubo en el que la quieres meter\n\n"+
-                            this.tablero.toString(cantTubosVisibles));
+                            "Escoge el tubo en el que la quieres meter",
+                            this.tablero.toString(cantTubosVisibles), 
+                            cantTubosVisibles);
                 }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
                 if (tuboEntrada!=-1)
                 {

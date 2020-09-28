@@ -1,4 +1,8 @@
 import java.util.Arrays;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class Tablero
 {
@@ -60,7 +64,7 @@ public class Tablero
         String result = "";
         for (int i=1; i<=cantTubosVisibles; i++)
         {
-            result += "   " + i + "   ";
+            result += i + "\t";
         }
         for (int j=configuracion.tamanoTubo-1; j>=0; j--)
         {
@@ -69,13 +73,39 @@ public class Tablero
             {
                 if (tubos[i][j] != -1)
                 {
-                    result += "   " + configuracion.colores[tubos[i][j]] + "   ";
+                    result += configuracion.colores[tubos[i][j]] + "\t";
                 }else{
-                    result += "   --   ";
+                    result += "--\t";
                 }
             }
         }
         return result;
+    }
+    
+    public void toString2(){
+        String Boundary1 = JOptionPane.showInputDialog(null, "Please enter the first boundary of the multiplication table.");
+        String Boundary2 = JOptionPane.showInputDialog(null, "Please enter the second boundary of the multiplication table.");
+
+        int X = Integer.parseInt(Boundary1);
+        int Y = Integer.parseInt(Boundary2);
+        int j = 1;
+        String Result = "";
+        int x = 1;
+
+        while (x <= X) {
+            for (int i = 1; i <= Y; i++) {
+                j = i * x;
+                Result = Result + j + "\t";
+            }
+            x++;
+            Result = Result + "\n";
+            }
+            JTextArea jt=new JTextArea(Result);
+            jt.setEditable(false);
+            jt.setOpaque(false);
+            jt.setTabSize(3);
+            JOptionPane.showMessageDialog(null, jt);
+
     }
     
     public void obtenerNivel(){

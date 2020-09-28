@@ -1,5 +1,6 @@
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
+import javax.swing.JTextArea;
 
 public class Interfaz extends JOptionPane
 {
@@ -35,48 +36,72 @@ public class Interfaz extends JOptionPane
      * 
      * @param elMensaje El mensaje mostrado al usuario en la interaccion.
      */
-    public void decirMensaje(String elMensaje)
+    public void decirMensaje(String mensaje)
     {
-        this.showMessageDialog(null, elMensaje, TITULO, PLAIN_MESSAGE, IMAGEN);
+        this.showMessageDialog(null, mensaje, TITULO, PLAIN_MESSAGE, IMAGEN);
     }
     
     /**
      * Pide al usuario insertar un dato por medio del teclado
      * 
-     * @param elMensaje El mensaje mostrado al usuario en la interaccion.
+     * @param mensaje El mensaje mostrado al usuario en la interaccion.
      * @return La hilera insertada por el usuario.
      */
-    public String pedirDato(String elMensaje)
+    public String pedirDato(String mensaje)
     {
         String resultado;
-        resultado = this.showInputDialog(null, elMensaje, TITULO, PLAIN_MESSAGE);
+        resultado = this.showInputDialog(null, mensaje, TITULO, PLAIN_MESSAGE);
         return resultado;
     }
     
     /**
      * Confirma con el usuario la opcion que ha tomado
      * 
-     * @param elMensaje El mensaje mostrado al usuario en la interaccion.
+     * @param mensaje El mensaje mostrado al usuario en la interaccion.
      * @return La opcion seleccionada.
      */
-    public int confirmarDato(String elMensaje)
+    public int confirmarDato(String mensaje)
     {
         int resultado;
-        resultado = this.showConfirmDialog(null, elMensaje, TITULO, OK_CANCEL_OPTION);
+        resultado = this.showConfirmDialog(null, mensaje, TITULO, OK_CANCEL_OPTION);
         return resultado;
     }
     
     /**
      * Pide al usuario elegir entre un conjunto de opciones
      * 
-     * @param lasOpciones Las opciones entre las cuales el usuario debe elegir.
-     * @param elMensaje El mensaje mostrado al usuario en la interaccion.
+     * @param opciones Las opciones entre las cuales el usuario debe elegir.
+     * @param mensaje El mensaje mostrado al usuario en la interaccion.
      * @return La opcion seleccionada.
      */
-    public int pedirOpcion(String[] lasOpciones, String elMensaje)
+    public int pedirOpcion(String[] opciones, String mensaje)
     {
         int resultado;
-        resultado = this.showOptionDialog(null, elMensaje, TITULO, DEFAULT_OPTION, PLAIN_MESSAGE, IMAGEN, lasOpciones, null);
+        resultado = this.showOptionDialog(null, mensaje, TITULO, 
+                                    DEFAULT_OPTION, PLAIN_MESSAGE, 
+                                    IMAGEN, opciones, null);
+        return resultado;
+    }
+    
+    /**
+     * Pide al usuario elegir entre un conjunto de opciones
+     * 
+     * @param opciones Las opciones entre las cuales el usuario debe elegir.
+     * @param mensaje El mensaje mostrado al usuario en la interaccion.
+     * @param datosTabla Datos en formato de tabla
+     * @return La opcion seleccionada.
+     */
+    public int pedirOpcion(String[] opciones, String mensaje, String datosTabla, int cantColumnas)
+    {
+        int resultado;
+        JTextArea tabla= new JTextArea(mensaje+"\n\n");
+        tabla.setEditable(false);
+        tabla.setOpaque(false);
+        tabla.setColumns(cantColumnas);
+        tabla.append(datosTabla);
+        resultado = this.showOptionDialog(null, tabla,  TITULO, 
+                                    DEFAULT_OPTION, PLAIN_MESSAGE, 
+                                    IMAGEN, opciones, null);
         return resultado;
     }
  
