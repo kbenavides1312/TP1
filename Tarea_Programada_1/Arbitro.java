@@ -20,11 +20,12 @@ public class Arbitro
                                     computadora.generarDistribucion());
         this.cantMovimientos = 0;
         this.interfaz = interfaz;
-        this.opciones = new String[cantTubosVisibles];
+        this.opciones = new String[cantTubosVisibles+1];
         for (int i=0; i<cantTubosVisibles; i++)
         {
             this.opciones[i] = Integer.toString(i+1);
         }
+        this.opciones[cantTubosVisibles] = "tubo extra";
     }
     
     public boolean trasvasarBola(int tuboSalida, int tuboEntrada){
@@ -43,6 +44,20 @@ public class Arbitro
         if (cantTubosVisibles<configuracion.cantTubos){
             this.cantMovimientos += 5;
             this.cantTubosVisibles++;
+            if (cantTubosVisibles<configuracion.cantTubos){
+                this.opciones = new String[cantTubosVisibles+1];
+                for (int i=0; i<cantTubosVisibles; i++)
+                {
+                    this.opciones[i] = Integer.toString(i+1);
+                }
+                this.opciones[cantTubosVisibles] = "tubo extra";
+            }else{
+                this.opciones = new String[cantTubosVisibles];
+                for (int i=0; i<cantTubosVisibles; i++)
+                {
+                    this.opciones[i] = Integer.toString(i+1);
+                }
+            }
             return true;
         }else{
             return false;
@@ -59,19 +74,28 @@ public class Arbitro
                         cantTubosVisibles);
             if (tuboSalida != -1)
             {
-                do{
-                    tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
-                            "Escoge el tubo en el que la quieres meter",
-                            this.tablero.toString(cantTubosVisibles), 
-                            cantTubosVisibles);
-                }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
-                if (tuboEntrada!=-1)
+                if (tuboSalida == cantTubosVisibles)
                 {
-                    if (!this.trasvasarBola(tuboSalida,tuboEntrada)){
-                        interfaz.decirMensaje("Movimiento invalido!");
-                    }
+                    this.agregarTuboExtra();
                 }else{
-                    tuboSalida=-1;
+                    do{
+                        tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
+                                "Escoge el tubo en el que la quieres meter",
+                                this.tablero.toString(cantTubosVisibles), 
+                                cantTubosVisibles);
+                    }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
+                    if (tuboEntrada!=-1)
+                    {
+                        if (tuboEntrada == cantTubosVisibles)
+                        {
+                            this.agregarTuboExtra();
+                        }
+                        else if (!this.trasvasarBola(tuboSalida,tuboEntrada)){
+                            interfaz.decirMensaje("Movimiento invalido!");
+                        }
+                    }else{
+                        tuboSalida=-1;
+                    }
                 }
             }
         }while(tuboSalida!=-1);
