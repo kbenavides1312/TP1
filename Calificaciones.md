@@ -19,16 +19,21 @@ Observaciones:
 
 
 ## Etapa II
-**Revisada por:**     
+**Revisada por:** Reichel Mora Villegas     
 Observaciones:
 
--  
--
--
+-  Ambos integrantes deben hacer commits según los issues asignados a cada miembro.
 
+
+Kenneth Benavides:
 | Valor          | Nota    | 
 | :-------------:|:-------:|
-|  10            |         |
+|  10            |    10   |
+
+Jeremy Calvo:
+| Valor          | Nota    | 
+| :-------------:|:-------:|
+|  10            |    2    |
 
 
 ## Etapa III
