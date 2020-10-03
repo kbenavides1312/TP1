@@ -19,14 +19,14 @@ public class Tablero
         Arrays.fill(niveles, 0);
         Arrays.fill(nivelesCompletos, 0);
         int color;
-        for (int i=0; i<configuracion.cantColores; i++){
-            for (int j=0; j<configuracion.tamanoTubo; j++){ //distribuye las pelotas entre los tubos
-                color=distribucion[i*configuracion.tamanoTubo+j];
-                this.agregarBola(i,color);
+        for (int tubo=0; tubo<configuracion.cantColores; tubo++){
+            for (int nivelTubo=0; nivelTubo<configuracion.tamanoTubo; nivelTubo++){ //distribuye las pelotas entre los tubos
+                color=distribucion[tubo*configuracion.tamanoTubo+nivelTubo];
+                this.agregarBola(tubo,color);
             }
         }
-        for (int i=configuracion.cantColores; i<tubos.length; i++){
-            Arrays.fill(tubos[i], -1);
+        for (int vacio=configuracion.cantColores; vacio<tubos.length; vacio++){
+            Arrays.fill(tubos[vacio], -1);
         }
     }
     
@@ -62,18 +62,18 @@ public class Tablero
     
     public String toString(int cantTubosVisibles){
         String result = "";
-        for (int i=1; i<=cantTubosVisibles; i++)
+        for (int tubo=1; tubo<=cantTubosVisibles; tubo++)
         {
-            result += i + "\t";
+            result += tubo + "\t";
         }
-        for (int j=configuracion.tamanoTubo-1; j>=0; j--)
+        for (int nivelTubo=configuracion.tamanoTubo-1; nivelTubo>=0; nivelTubo--)
         {
             result += "\n";
-            for (int i=0; i<cantTubosVisibles; i++)
+            for (int tubo=0; tubo<cantTubosVisibles; tubo++)
             {
-                if (tubos[i][j] != -1)
+                if (tubos[tubo][nivelTubo] != -1)
                 {
-                    result += configuracion.colores[tubos[i][j]] + "\t";
+                    result += configuracion.colores[tubos[tubo][nivelTubo]] + "\t";
                 }else{
                     result += "--\t";
                 }
@@ -81,7 +81,16 @@ public class Tablero
         }
         return result;
     }
-    
+    public boolean ganar(){
+        for (int tubo=0; tubo<8; tubo++){
+            for (int nivelTubo=0; nivelTubo<3; nivelTubo++){
+                if((tubos[tubo][nivelTubo]) != (tubos[tubo][nivelTubo+1])){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     
     public void obtenerNivel(){
     }

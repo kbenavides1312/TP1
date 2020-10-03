@@ -64,7 +64,7 @@ public class Arbitro
         }
     }
     
-    public void jugar(){
+    public boolean jugar(){
         int tuboSalida;
         int tuboEntrada;
         do{
@@ -98,7 +98,13 @@ public class Arbitro
                     }
                 }
             }
+            if (tablero.ganar()){
+                this.interfaz.decirMensaje("Ha ganado");
+                tuboSalida = -1;
+                return true;
+            } 
         }while(tuboSalida!=-1);
+        return false;
     }
     
     public void revisarEstadoJuego(){

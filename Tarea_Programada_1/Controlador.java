@@ -31,12 +31,17 @@ public class Controlador
      */
     public void iniciar(){
         int opcion;
+        boolean juegoTerminado;
+        juegoTerminado = false;
         do {
             opcion = interfaz.pedirOpcion(OPCIONES, MENSAJE);
             switch (opcion) {
                 case 0: 
-                    arbitro.jugar();
+                    juegoTerminado = arbitro.jugar();
                     break;
+            }
+            if(juegoTerminado){
+                opcion = 1;
             }
         }while(opcion < 1);
     }
