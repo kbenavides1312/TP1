@@ -41,7 +41,31 @@ public class Tablero
         }else{
             return false;
         }
-        
+    }
+    
+    public boolean agregarBolaIniciado(int numeroTubo, int color){
+        int bolaAnterior;
+        int ultimo;
+        ultimo = niveles[numeroTubo]-1;
+        if (niveles[numeroTubo]>0){
+            bolaAnterior = tubos[numeroTubo][ultimo];
+        }else{
+            bolaAnterior = -1;
+        }
+        if(bolaAnterior == color || bolaAnterior == -1){
+             if (niveles[numeroTubo]<configuracion.tamanoTubo){
+                tubos[numeroTubo][niveles[numeroTubo]]= color;
+                if (nivelesCompletos[numeroTubo]==niveles[numeroTubo] && color==tubos[numeroTubo][0]){
+                    nivelesCompletos[numeroTubo]++;
+                }
+                niveles[numeroTubo]++;
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+                return false;
+            }
     }
     
     public int quitarBola(int numeroTubo){

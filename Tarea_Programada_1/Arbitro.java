@@ -31,7 +31,7 @@ public class Arbitro
     public boolean trasvasarBola(int tuboSalida, int tuboEntrada){
         int bola;
         bola = tablero.quitarBola(tuboSalida);
-        if (tablero.agregarBola(tuboEntrada, bola)){
+        if (tablero.agregarBolaIniciado(tuboEntrada, bola)){
             this.cantMovimientos++;
             return true;
         }else{
