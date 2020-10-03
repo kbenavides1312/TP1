@@ -69,9 +69,10 @@ public class Arbitro
         int tuboEntrada;
         do{
             tuboSalida = this.interfaz.pedirOpcion(this.opciones,
-                        "Escoge el tubo del que vas a tomar una bola",
-                        this.tablero.toString(cantTubosVisibles), 
-                        cantTubosVisibles);
+                ("Escoge el tubo del que vas a tomar una bola.\nMovimientos : "
+                + this.cantMovimientos),
+                  this.tablero.toString(cantTubosVisibles), 
+                       cantTubosVisibles);
             if (tuboSalida != -1)
             {
                 if (tuboSalida == cantTubosVisibles)
@@ -80,9 +81,10 @@ public class Arbitro
                 }else{
                     do{
                         tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
-                                "Escoge el tubo en el que la quieres meter",
-                                this.tablero.toString(cantTubosVisibles), 
-                                cantTubosVisibles);
+                            ("Escoge el tubo en el que la quieres meter.\nMovimientos : "
+                            + this.cantMovimientos),
+                              this.tablero.toString(cantTubosVisibles), 
+                                   cantTubosVisibles);
                     }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
                     if (tuboEntrada!=-1)
                     {
@@ -99,7 +101,8 @@ public class Arbitro
                 }
             }
             if (tablero.ganar()){
-                this.interfaz.decirMensaje("Ha ganado");
+                this.interfaz.decirMensaje("Ha ganado en "
+                        + cantMovimientos+" movimientos");
                 tuboSalida = -1;
                 return true;
             } 
