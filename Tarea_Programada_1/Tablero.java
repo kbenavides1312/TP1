@@ -32,7 +32,7 @@ public class Tablero
     
     public boolean agregarBola(int numeroTubo, int color){
         if (niveles[numeroTubo]<configuracion.tamanoTubo){
-            tubos[numeroTubo][niveles[numeroTubo]]= color;
+            tubos[numeroTubo][niveles[numeroTubo]] = color;
             if (nivelesCompletos[numeroTubo]==niveles[numeroTubo] && color==tubos[numeroTubo][0]){
                 nivelesCompletos[numeroTubo]++;
             }
@@ -53,19 +53,10 @@ public class Tablero
             bolaAnterior = -1;
         }
         if(bolaAnterior == color || bolaAnterior == -1){
-             if (niveles[numeroTubo]<configuracion.tamanoTubo){
-                tubos[numeroTubo][niveles[numeroTubo]]= color;
-                if (nivelesCompletos[numeroTubo]==niveles[numeroTubo] && color==tubos[numeroTubo][0]){
-                    nivelesCompletos[numeroTubo]++;
-                }
-                niveles[numeroTubo]++;
-                return true;
-            }else{
-                return false;
-            }
+             return agregarBola(numeroTubo, color);
         }else{
-                return false;
-            }
+            return false;
+        }
     }
     
     public int quitarBola(int numeroTubo){
@@ -92,18 +83,7 @@ public class Tablero
     } 
     
     public boolean verificarVacio(int verificarTubo, boolean tuboExtraActivo){
-        if(!tuboExtraActivo && verificarTubo==7){
-                return false;
-        }
-        if(verificarTubo != -1){   
-           if(tubos[verificarTubo][0] != -1){
-               return  false;
-           }else{
-               return true;
-           }
-        }else{
-            return true;
-        }
+        return (tubos[verificarTubo][0] == -1);
     }
     
     public String toString(int cantTubosVisibles){
@@ -128,17 +108,12 @@ public class Tablero
         return result;
     }
     
-    public boolean ganar(){
+    public boolean juegoTerminado(){
         for (int tubo=0; tubo<8; tubo++){
-            for (int nivelTubo=0; nivelTubo<3; nivelTubo++){
-                if((tubos[tubo][nivelTubo]) != (tubos[tubo][nivelTubo+1])){
+            if(nivelesCompletos[tubo]>0 && nivelesCompletos[tubo]<configuracion.tamanoTubo){
                     return false;
-                }
             }
         }
         return true;
-    }
-    
-    public void obtenerNivel(){
     }
 }

@@ -10,4 +10,6 @@ comment4.params=bola
 comment4.target=java.lang.String\ identificarBola(int)
 comment5.params=
 comment5.target=boolean\ jugar()
-numComments=6
+comment6.params=
+comment6.target=boolean\ nuevoJuego()
+numComments=7
