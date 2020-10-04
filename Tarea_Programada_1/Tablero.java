@@ -120,6 +120,7 @@ public class Tablero
         }
         return result;
     }
+    
     public boolean ganar(){
         for (int tubo=0; tubo<8; tubo++){
             for (int nivelTubo=0; nivelTubo<3; nivelTubo++){

@@ -40,9 +40,6 @@ public class Controlador
                     juegoTerminado = arbitro.jugar();
                     break;
             }
-            if(juegoTerminado){
-                opcion = 1;
-            }
         }while(opcion < 1);
     }
     

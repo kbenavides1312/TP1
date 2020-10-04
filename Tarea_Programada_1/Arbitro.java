@@ -117,8 +117,5 @@ public class Arbitro
             } 
         }while(tuboSalida!=-1);
         return false;
-    } 
-    
-    public void revisarEstadoJuego(){
     }
 }   
