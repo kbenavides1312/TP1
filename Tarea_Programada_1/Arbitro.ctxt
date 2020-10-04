@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=boolean\ agregarTuboExtra()
 comment4.params=
 comment4.target=boolean\ jugar()
-numComments=5
+comment5.params=
+comment5.target=boolean\ nuevoJuego()
+numComments=6

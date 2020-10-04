@@ -22,6 +22,7 @@ public class Arbitro
         this.cantMovimientos = 0;
         this.interfaz = interfaz;
         this.opciones = new String[cantTubosVisibles+1];
+        this.tuboExtraActivo = false;
         for (int i=0; i<cantTubosVisibles; i++)
         {
             this.opciones[i] = Integer.toString(i+1);
@@ -71,51 +72,56 @@ public class Arbitro
         boolean tuboVacio;
         do{
             do{
+                tuboVacio=false;
                tuboSalida = this.interfaz.pedirOpcion(this.opciones,
                     ("Escoge el tubo del que vas a tomar una bola.\nMovimientos : "
                     + this.cantMovimientos),
                       this.tablero.toString(cantTubosVisibles), 
                            cantTubosVisibles);            
-               tuboVacio = tablero.verificarVacio(tuboSalida,tuboExtraActivo);
-               if (tuboVacio == true && tuboSalida != -1){
-                   interfaz.decirMensaje("Tubo vacio!");
-                }
-            }while(tuboVacio == true && tuboSalida != -1);
-            if (tuboSalida != -1)
-            {
-                if (tuboSalida == cantTubosVisibles)
-                {
+               if (!tuboExtraActivo && tuboSalida == cantTubosVisibles){
                     this.agregarTuboExtra();
                     tuboExtraActivo = true;
-                }else{
-                    do{
-                        tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
-                            ("Escoge el tubo en el que la quieres meter.\nMovimientos : "
-                            + this.cantMovimientos),
-                              this.tablero.toString(cantTubosVisibles), 
-                                   cantTubosVisibles);
-                    }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
-                    if (tuboEntrada!=-1)
-                    {
-                        if (tuboEntrada == cantTubosVisibles)
-                        {
-                            interfaz.decirMensaje("Movimiento invalido!");
-                        }
-                        else if (!this.trasvasarBola(tuboSalida,tuboEntrada)){
-                            interfaz.decirMensaje("Movimiento invalido!");
-                        }
-                    }else{
-                        tuboSalida=-1;
+                    tuboVacio = true;
+               }else if (tuboSalida != -1){
+                   tuboVacio = tablero.verificarVacio(tuboSalida,tuboExtraActivo);
+                   if (tuboVacio == true){
+                       interfaz.decirMensaje("Tubo vacio!");
                     }
                 }
-            }
-            if (tablero.ganar()){
-                this.interfaz.decirMensaje("Ha ganado en "
-                        + cantMovimientos+" movimientos");
-                tuboSalida = -1;
-                return true;
+            }while(tuboVacio && tuboSalida != -1);
+            if (tuboSalida != -1)
+            {
+                do{
+                    tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
+                        ("Escoge el tubo en el que la quieres meter.\nMovimientos : "
+                        + this.cantMovimientos),
+                          this.tablero.toString(cantTubosVisibles), 
+                               cantTubosVisibles);
+                }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
+                if (tuboEntrada!=-1)
+                {
+                    if (tuboEntrada == cantTubosVisibles)
+                    {
+                        interfaz.decirMensaje("Movimiento invalido!");
+                    }
+                    else if (!this.trasvasarBola(tuboSalida,tuboEntrada)){
+                        interfaz.decirMensaje("Movimiento invalido!");
+                    }
+                }else{
+                    tuboSalida=-1;
+                }
             } 
-        }while(tuboSalida!=-1);
+        }while(tuboSalida!=-1 && !tablero.juegoTerminado());
+        if (tablero.juegoTerminado()){
+            this.interfaz.decirMensaje("Ha ganado en "
+                    + cantMovimientos+" movimientos");
+            tuboSalida = -1;
+            return true;
+        }
         return false;
+    }
+    
+    public boolean nuevoJuego(){
+        return true;
     }
 }   
