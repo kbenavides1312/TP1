@@ -55,14 +55,14 @@ public class Controlador
                             break;
                             
                         case 1:
-                            interfaz.decirMensaje("");
+                            interfaz.decirMensaje("Autores:\n"
+                                                    +"    Kenneth Benavides (B10937)\n"
+                                                    +"    Jeremy Calvo (C01507)");
                             break;
                             
                         case 2:
                             interfaz.decirMensaje("");
                             break;
-                            
-                        
                     }
                     
                 }
