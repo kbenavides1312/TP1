@@ -48,7 +48,6 @@ public class Controlador
                         opciones = OPCIONES_INICIAL;
                     }
             }
-            
         }while(opcion != opciones.length-1);
     }
     
