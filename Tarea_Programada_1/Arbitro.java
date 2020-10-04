@@ -122,6 +122,17 @@ public class Arbitro
     }
     
     public boolean nuevoJuego(){
-        return true;
+        this.tablero = new Tablero(configuracion,
+                                    computadora.generarDistribucion());
+        this.cantMovimientos = 0;
+        this.cantTubosVisibles = configuracion.cantTubosVisibles;
+        this.opciones = new String[cantTubosVisibles+1];
+        for (int i=0; i<cantTubosVisibles; i++)
+        {
+            this.opciones[i] = Integer.toString(i+1);
+        }
+        this.opciones[cantTubosVisibles] = "tubo extra";
+        this.tuboExtraActivo = false;
+        return this.jugar();
     }
 }   
