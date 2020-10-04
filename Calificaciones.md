@@ -37,16 +37,15 @@ Jeremy Calvo:
 
 
 ## Etapa III
-**Revisada por:**     
+**Revisada por:**     Reichel Mora Villegas
 Observaciones:
 
--  
--
--
+-  No se creó la rama (branch) para esta entrega.
+
 
 | Valor          | Nota    | 
 | :-------------:|:-------:|
-|  10            |         |
+|  10            |    0    |
 
 
 ## Etapa IV

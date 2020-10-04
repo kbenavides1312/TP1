@@ -119,7 +119,7 @@ public class Arbitro
                         + this.cantMovimientos),
                           this.tablero.toString(cantTubosVisibles), 
                                cantTubosVisibles);
-                }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
+                }while(tuboEntrada!=-1 && (tuboEntrada==tuboSalida || tuboEntrada==cantTubosVisibles));
                 if (!this.trasvasarBola(tuboSalida, tuboEntrada)){
                     interfaz.decirMensaje("Movimiento invalido!");
                 }
