@@ -84,6 +84,21 @@ public class Tablero
         return bola;
     }
     
+    public boolean verificarVacio(int verificarTubo, boolean tuboExtraActivo){
+        if(!tuboExtraActivo && verificarTubo==7){
+                return false;
+        }
+        if(verificarTubo != -1){   
+           if(tubos[verificarTubo][0] != -1){
+               return  false;
+           }else{
+               return true;
+           }
+        }else{
+            return true;
+        }
+    }
+    
     public String toString(int cantTubosVisibles){
         String result = "";
         for (int tubo=1; tubo<=cantTubosVisibles; tubo++)

@@ -11,7 +11,8 @@ public class Arbitro
     private int cantTubosVisibles;
     private int cantMovimientos;
     private String[] opciones;
-
+    private boolean tuboExtraActivo;
+    
     public Arbitro(Interfaz interfaz, Configuracion configuracion){
         this.configuracion = configuracion;
         this.cantTubosVisibles = configuracion.cantTubosVisibles;
@@ -67,17 +68,25 @@ public class Arbitro
     public boolean jugar(){
         int tuboSalida;
         int tuboEntrada;
+        boolean tuboVacio;
         do{
-            tuboSalida = this.interfaz.pedirOpcion(this.opciones,
-                ("Escoge el tubo del que vas a tomar una bola.\nMovimientos : "
-                + this.cantMovimientos),
-                  this.tablero.toString(cantTubosVisibles), 
-                       cantTubosVisibles);
+            do{
+               tuboSalida = this.interfaz.pedirOpcion(this.opciones,
+                    ("Escoge el tubo del que vas a tomar una bola.\nMovimientos : "
+                    + this.cantMovimientos),
+                      this.tablero.toString(cantTubosVisibles), 
+                           cantTubosVisibles);            
+               tuboVacio = tablero.verificarVacio(tuboSalida,tuboExtraActivo);
+               if (tuboVacio == true && tuboSalida != -1){
+                   interfaz.decirMensaje("Tubo vacio!");
+                }
+            }while(tuboVacio == true && tuboSalida != -1);
             if (tuboSalida != -1)
             {
                 if (tuboSalida == cantTubosVisibles)
                 {
                     this.agregarTuboExtra();
+                    tuboExtraActivo = true;
                 }else{
                     do{
                         tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
@@ -90,7 +99,7 @@ public class Arbitro
                     {
                         if (tuboEntrada == cantTubosVisibles)
                         {
-                            this.agregarTuboExtra();
+                            interfaz.decirMensaje("Movimiento invalido!");
                         }
                         else if (!this.trasvasarBola(tuboSalida,tuboEntrada)){
                             interfaz.decirMensaje("Movimiento invalido!");
@@ -108,7 +117,7 @@ public class Arbitro
             } 
         }while(tuboSalida!=-1);
         return false;
-    }
+    } 
     
     public void revisarEstadoJuego(){
     }
