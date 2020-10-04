@@ -2,8 +2,8 @@ public class Controlador
 {
     private final String TITULO_VENTANAS = "Ball Sort Puzzle";
     private final String MENSAJE = "Escoja una opción";
-    private final String[] OPCIONES_INICIAL = {"Jugar", "Salir"}; 
-    private final String[] OPCIONES_EN_JUEGO = {"Nuevo juego", "Volver al juego", "Salir"}; 
+    private final String[] OPCIONES_INICIAL = {"Jugar", "Creditos", "Ayuda","Salir"}; 
+    private final String[] OPCIONES_EN_JUEGO = {"Nuevo juego", "Volver al juego", "Creditos", "Ayuda","Salir"}; 
     private final String[] COLORES = {"RO","AZ","VE","AM","MO"}; 
     private final int TAMANO_TUBO = 4;
     private final int CANT_TUBOS_VACIOS = 3;
@@ -42,13 +42,32 @@ public class Controlador
                     if (!juegoTerminado){
                         opciones = OPCIONES_EN_JUEGO;
                     }
-            }else if (opciones.length==3 && opcion==1){
-                    juegoTerminado=arbitro.jugar();
-                    if (juegoTerminado){
-                        opciones = OPCIONES_INICIAL;
+            }else{
+                if (opciones.length==5){
+                    opcion--;
+                }{
+                    switch(opcion){
+                        case 0:
+                            juegoTerminado=arbitro.jugar();
+                            if (juegoTerminado){
+                                opciones = OPCIONES_INICIAL;
+                            }
+                            break;
+                            
+                        case 1:
+                            interfaz.decirMensaje("");
+                            break;
+                            
+                        case 2:
+                            interfaz.decirMensaje("");
+                            break;
+                            
+                        
                     }
+                    
+                }
             }
-        }while(opcion != opciones.length-1);
+        }while(opcion != 3);
     }
     
     /**
