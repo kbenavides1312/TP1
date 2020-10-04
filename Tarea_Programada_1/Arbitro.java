@@ -102,13 +102,6 @@ public class Arbitro
             if (tuboSalida != -1)
             {
                 do{
-                    tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
-                        ("Escoge el tubo en el que la quieres meter.\nMovimientos : "
-                        + this.cantMovimientos),
-                          this.tablero.toString(cantTubosVisibles), 
-                               cantTubosVisibles);
-                }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
-                do{
                     bola = tablero.verBola(tuboSalida);
                     tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
                         ("Escoge el tubo en el que la quieres meter." +
@@ -121,6 +114,9 @@ public class Arbitro
                           this.tablero.toString(cantTubosVisibles), 
                                cantTubosVisibles);
                 }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
+                if (!this.trasvasarBola(tuboSalida, tuboEntrada)){
+                    interfaz.decirMensaje("Movimiento invalido!");
+                }
             } 
         }while(tuboSalida!=-1 && !tablero.juegoTerminado());
         if (tablero.juegoTerminado()){
