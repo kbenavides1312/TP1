@@ -23,13 +23,14 @@ public class Arbitro
         this.cantMovimientos = 0;
         this.interfaz = interfaz;
         this.opciones = new String[cantTubosVisibles+1];
-        for (int i=0; i<cantTubosVisibles; i++)
+        for (int tubo=0; tubo<cantTubosVisibles; tubo++)
         {
-            this.opciones[i] = Integer.toString(i+1);
+            this.opciones[tubo] = Integer.toString(tubo+1);
         }
         this.opciones[cantTubosVisibles] = "tubo extra";
     }
     
+    //Este metodo mueve las bolas de un tubo a otro, si es posible
     public boolean trasvasarBola(int tuboSalida, int tuboEntrada){
         int bola;
         bola = tablero.quitarBola(tuboSalida);
@@ -42,22 +43,23 @@ public class Arbitro
         }
     } 
     
+    //Este metodo agrega el tubo extra, si a si lo quiere el jugador
     public boolean agregarTuboExtra(){
         if (cantTubosVisibles<configuracion.cantTubos){
             this.cantMovimientos += 5;
             this.cantTubosVisibles++;
             if (cantTubosVisibles<configuracion.cantTubos){
                 this.opciones = new String[cantTubosVisibles+1];
-                for (int i=0; i<cantTubosVisibles; i++)
+                for (int tubo=0; tubo<cantTubosVisibles; tubo++)
                 {
-                    this.opciones[i] = Integer.toString(i+1);
+                    this.opciones[tubo] = Integer.toString(tubo+1);
                 }
                 this.opciones[cantTubosVisibles] = "tubo extra";
             }else{
                 this.opciones = new String[cantTubosVisibles];
-                for (int i=0; i<cantTubosVisibles; i++)
+                for (int tubo=0; tubo<cantTubosVisibles; tubo++)
                 {
-                    this.opciones[i] = Integer.toString(i+1);
+                    this.opciones[tubo] = Integer.toString(tubo+1);
                 }
             }
             return true;
@@ -66,6 +68,8 @@ public class Arbitro
         }
     }
     
+    //Este metodo identifica la bola que se quiere mover para prensetarlo en
+    //la interfaz
     public String identificarBola( int bola){
         String[] COLORES = {"RO","AZ","VE","AM","MO"}; 
         String color;
@@ -73,6 +77,7 @@ public class Arbitro
         return color;
     }
     
+    //Este metodo empieza el juego
     public boolean jugar(){ 
         int tuboSalida;
         int tuboEntrada;
@@ -110,7 +115,7 @@ public class Arbitro
                             + this.cantMovimientos),
                               this.tablero.toString(cantTubosVisibles), 
                                    cantTubosVisibles);
-                    }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida);
+                    }while(tuboEntrada!=-1 && tuboEntrada==tuboSalida); 
                     if (tuboEntrada!=-1)
                     {
                         if (tuboEntrada == cantTubosVisibles)
@@ -133,5 +138,5 @@ public class Arbitro
             } 
         }while(tuboSalida!=-1);
         return false;
-    } 
-}    
+    }   
+}     
