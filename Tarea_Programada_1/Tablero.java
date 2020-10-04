@@ -4,6 +4,13 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+/**
+ * Esta clase tiene todos los metodos necesarios para interactuar con los
+ * tubos y bolas requeridas en el juego.
+ * 
+ * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
+ * @version 4/10/2020
+ */
 public class Tablero
 {
     private int[][] tubos;

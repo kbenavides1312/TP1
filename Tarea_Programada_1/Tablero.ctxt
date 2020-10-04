@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Tablero
+comment0.text=\r\n\ Esta\ clase\ tiene\ todos\ los\ metodos\ necesarios\ para\ interactuar\ con\ los\r\n\ tubos\ y\ bolas\ requeridas\ en\ el\ juego.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
 comment1.params=configuracion\ distribucion
 comment1.target=Tablero(Configuracion,\ int[])
 comment2.params=numeroTubo\ color

@@ -1,6 +1,12 @@
 import java.util.Random;
 import java.util.Arrays;
 
+/**
+ * Write a description of class SAD here.
+ * 
+ * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
+ * @version 4/10/2020
+ */
 public class Computadora
 {
     private Configuracion configuracion;

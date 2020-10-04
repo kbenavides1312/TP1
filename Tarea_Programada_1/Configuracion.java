@@ -1,4 +1,9 @@
-
+/**
+ * Write a description of class SAD here.
+ * 
+ * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
+ * @version 4/10/2020
+ */
 public class Configuracion
 {
     public final String[] colores;

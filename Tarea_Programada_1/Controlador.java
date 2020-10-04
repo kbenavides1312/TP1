@@ -1,3 +1,11 @@
+/**
+ * Esta clase contiene toda los parametros necesarios para que las otras 
+ * clases funcionen de la manera deseada, asi como el metodo para iniciar el
+ * progrma.
+ * 
+ * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
+ * @version 4/10/2020
+ */
 public class Controlador
 {
     private final String TITULO_VENTANAS = "Ball Sort Puzzle";

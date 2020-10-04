@@ -2,6 +2,13 @@ import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextArea;
 
+/**
+ * Esta clase tiene todos los metodos necesarios, que se utilizaran, para 
+ * mostrar la informacion necesaria al jugador.     
+ * 
+ * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
+ * @version 4/10/2020
+ */
 public class Interfaz extends JOptionPane
 {
     private String TITULO;

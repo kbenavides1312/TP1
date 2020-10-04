@@ -1,7 +1,13 @@
 import java.util.Arrays;
 import javax.swing.JTextArea;
 import javax.swing.JOptionPane;
-        
+
+/**
+ * Write a description of class SAD here.
+ * 
+ * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
+ * @version 4/10/2020
+ */        
 public class Arbitro
 {   
     private Configuracion configuracion;
@@ -82,12 +88,12 @@ public class Arbitro
         String color;
         do{
             do{
-                tuboVacio=false;
+               tuboVacio=false;
                tuboSalida = this.interfaz.pedirOpcion(this.opciones,
                     ("Escoge el tubo del que vas a tomar una bola.\nMovimientos : "
                     + this.cantMovimientos),
                       this.tablero.toString(cantTubosVisibles), 
-                           cantTubosVisibles);            
+                           cantTubosVisibles);
                if (!tuboExtraActivo && tuboSalida == cantTubosVisibles){
                     this.agregarTuboExtra();
                     tuboExtraActivo = true;

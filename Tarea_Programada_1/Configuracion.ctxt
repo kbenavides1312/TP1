@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Configuracion
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ SAD\ here.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
 comment1.params=colores\ tamanoTubo\ cantTubosVacios\ cantTubosVisibles
 comment1.target=Configuracion(java.lang.String[],\ int,\ int,\ int)
 numComments=2

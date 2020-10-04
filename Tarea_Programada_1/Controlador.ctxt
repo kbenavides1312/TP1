@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Controlador
+comment0.text=\r\n\ Esta\ clase\ contiene\ toda\ los\ parametros\ necesarios\ para\ que\ las\ otras\ \r\n\ clases\ funcionen\ de\ la\ manera\ deseada,\ asi\ como\ el\ metodo\ para\ iniciar\ el\r\n\ progrma.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
 comment1.params=
 comment1.target=Controlador()
 comment1.text=\r\n\ Crea\ el\ objeto,\ la\ interfaz\ y\ al\ arbitro\r\n\ \r\n

@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Interfaz
+comment0.text=\r\n\ Esta\ clase\ tiene\ todos\ los\ metodos\ necesarios,\ que\ se\ utilizaran,\ para\ \r\n\ mostrar\ la\ informacion\ necesaria\ al\ jugador.\ \ \ \ \ \r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
 comment1.params=elTitulo
 comment1.target=Interfaz(java.lang.String)
 comment1.text=\r\n\ Crea\ el\ objeto,\ el\ titulo\ y\ la\ imagen\ que\ seran\ usadas\ en\ ventanas\r\n\ \r\n\ @param\ elTitulo\ El\ itulo\ de\ ventanas.\r\n
