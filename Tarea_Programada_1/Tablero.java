@@ -84,6 +84,13 @@ public class Tablero
         return bola;
     }
     
+    public int verBola (int numeroTubo){
+        int bola;
+        int ultimo = niveles[numeroTubo]-1;
+        bola = tubos[numeroTubo][ultimo];
+        return bola;
+    } 
+    
     public boolean verificarVacio(int verificarTubo, boolean tuboExtraActivo){
         if(!tuboExtraActivo && verificarTubo==7){
                 return false;

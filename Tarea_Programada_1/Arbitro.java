@@ -13,6 +13,7 @@ public class Arbitro
     private String[] opciones;
     private boolean tuboExtraActivo;
     
+    
     public Arbitro(Interfaz interfaz, Configuracion configuracion){
         this.configuracion = configuracion;
         this.cantTubosVisibles = configuracion.cantTubosVisibles;
@@ -39,7 +40,7 @@ public class Arbitro
             tablero.agregarBola(tuboSalida, bola);
             return false;
         }
-    }
+    } 
     
     public boolean agregarTuboExtra(){
         if (cantTubosVisibles<configuracion.cantTubos){
@@ -65,10 +66,19 @@ public class Arbitro
         }
     }
     
-    public boolean jugar(){
+    public String identificarBola( int bola){
+        String[] COLORES = {"RO","AZ","VE","AM","MO"}; 
+        String color;
+        color = COLORES[bola];
+        return color;
+    }
+    
+    public boolean jugar(){ 
         int tuboSalida;
         int tuboEntrada;
+        int bola;
         boolean tuboVacio;
+        String color;
         do{
             do{
                tuboSalida = this.interfaz.pedirOpcion(this.opciones,
@@ -89,8 +99,14 @@ public class Arbitro
                     tuboExtraActivo = true;
                 }else{
                     do{
+                        bola = tablero.verBola(tuboSalida);
                         tuboEntrada = this.interfaz.pedirOpcion(this.opciones,
-                            ("Escoge el tubo en el que la quieres meter.\nMovimientos : "
+                            ("Escoge el tubo en el que la quieres meter." +
+                            "                                           " +
+                            "Bola selecionada : "
+                            + (color = this.identificarBola(bola))
+                            + " del tubo " + (tuboSalida+1) 
+                            +"\nMovimientos : "
                             + this.cantMovimientos),
                               this.tablero.toString(cantTubosVisibles), 
                                    cantTubosVisibles);
@@ -117,5 +133,5 @@ public class Arbitro
             } 
         }while(tuboSalida!=-1);
         return false;
-    }
-}   
+    } 
+}    

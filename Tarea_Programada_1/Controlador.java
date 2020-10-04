@@ -41,7 +41,7 @@ public class Controlador
                     break;
             }
         }while(opcion < 1);
-    }
+    } 
     
     /**
      * Funcion main
