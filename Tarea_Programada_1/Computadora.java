@@ -2,19 +2,20 @@ import java.util.Random;
 import java.util.Arrays;
 
 /**
- * Write a description of class SAD here.
+ * Esta clase recibe lo necesario para crea la generacion de las bolas en 
+ * los tubos.
  * 
  * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
  * @version 4/10/2020
  */
-public class Computadora
+public class Computadora 
 {
     private Configuracion configuracion;
     private Random generadorDist;
     
- 
     /**
-     * Crea el objeto
+     * Inicia lo necesario para generar la distribucion de las bolas en 
+     * los tubos.
      * 
      * @param cantColores cantidad de colores diferentes
      * @param tamanoTubo cantidad de tubos
@@ -25,6 +26,9 @@ public class Computadora
         
     }
     
+    /**
+     * Genera la distribucion de las bolas en los tubos.
+     */
     public int[] generarDistribucion(){
         int cantBolas = configuracion.cantColores * configuracion.tamanoTubo;
         int[] restantesColores = new int[configuracion.cantColores];

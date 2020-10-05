@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=Computadora
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ SAD\ here.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
+comment0.text=\r\n\ Esta\ clase\ recibe\ lo\ necesario\ para\ crea\ la\ generacion\ de\ las\ bolas\ en\ \r\n\ los\ tubos.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
 comment1.params=configuracion
 comment1.target=Computadora(Configuracion)
-comment1.text=\r\n\ Crea\ el\ objeto\r\n\ \r\n\ @param\ cantColores\ cantidad\ de\ colores\ diferentes\r\n\ @param\ tamanoTubo\ cantidad\ de\ tubos\r\n
+comment1.text=\r\n\ Inicia\ lo\ necesario\ para\ generar\ la\ distribucion\ de\ las\ bolas\ en\ \r\n\ los\ tubos.\r\n\ \r\n\ @param\ cantColores\ cantidad\ de\ colores\ diferentes\r\n\ @param\ tamanoTubo\ cantidad\ de\ tubos\r\n
 comment2.params=
 comment2.target=int[]\ generarDistribucion()
+comment2.text=\r\n\ Genera\ la\ distribucion\ de\ las\ bolas\ en\ los\ tubos.\r\n
 numComments=3

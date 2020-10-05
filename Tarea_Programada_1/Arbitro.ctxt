@@ -1,16 +1,22 @@
 #BlueJ class context
 comment0.target=Arbitro
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ SAD\ here.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
+comment0.text=\r\n\ Esta\ clase\ recibe\ los\ parametros\ requeridos\ para\ crear\ todo\ lo\ necesario\ \r\n\ para\ que\ el\ juego\ funcione\ de\ manera\ correcta.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
 comment1.params=interfaz\ configuracion
 comment1.target=Arbitro(Interfaz,\ Configuracion)
+comment1.text=\r\n\ Crea\ el\ objeto\ y\ los\ tubos\ con\ sus\ bolas\ distribuidas.\r\n\ \r\n\ @param\ interfaz\ Contiene\ la\ interfaz\r\n\ @param\ configuracion\ Contiene\ los\ parametros\ para\ la\ creacion\ \r\n\ del\ juego\r\n
 comment2.params=tuboSalida\ tuboEntrada
 comment2.target=boolean\ trasvasarBola(int,\ int)
+comment2.text=\r\n\ Saca\ la\ bola\ de\ un\ tubo\ para\ meterlo\ en\ otro.\r\n\ \r\n\ @param\ tuboSalida\ Tubo\ del\ cual\ se\ quiere\ sacar\ una\ bola\r\n\ @param\ tuboEntrada\ Tubo\ al\ cual\ se\ quiere\ meter\ un\ bola.\r\n
 comment3.params=
 comment3.target=boolean\ agregarTuboExtra()
+comment3.text=\r\n\ Metodo\ que\ agrega\ un\ tubo\ extra\r\n
 comment4.params=bola
 comment4.target=java.lang.String\ identificarBola(int)
+comment4.text=\ \r\n\ Identifica\ el\ color\ de\ la\ bola\ deseada.\r\n\ \r\n\ @param\ bola\ Bola\ a\ indentificar\r\n
 comment5.params=
 comment5.target=boolean\ jugar()
+comment5.text=\r\n\ Despliega\ el\ menu\ con\ el\ que\ el\ jugador\ interactua\ con\ las\ bolas\ en\r\n\ los\ tubos.\r\n
 comment6.params=
 comment6.target=boolean\ nuevoJuego()
+comment6.text=\r\n\ Crea\ una\ nueva\ distribucion\ de\ las\ bolas\ en\ los\ tubos.\r\n
 numComments=7

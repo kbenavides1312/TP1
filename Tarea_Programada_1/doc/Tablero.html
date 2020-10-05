@@ -50,7 +50,7 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">Tablero</span>
 extends java.lang.Object</pre>
 <div class="block">Esta clase tiene todos los metodos necesarios para interactuar con los
- tubos y bolas requeridas en el juego</div>
+ tubos y bolas requeridas en el juego.</div>
 <dl>
 <dt><span class="simpleTagLabel">Version:</span></dt>
 <dd>4/10/2020</dd>
@@ -79,7 +79,9 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(Configuracion,int%5B%5D)">Tablero</a></span>&#8203;(Configuracion&nbsp;configuracion,
        int[]&nbsp;distribucion)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Crea el objeto</div>
+</td>
 </tr>
 </table>
 </li>
@@ -103,13 +105,17 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#agregarBola(int,int)">agregarBola</a></span>&#8203;(int&nbsp;numeroTubo,
            int&nbsp;color)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Agrega una bola a un tubo sin ninguna restrinccion.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#agregarBolaIniciado(int,int)">agregarBolaIniciado</a></span>&#8203;(int&nbsp;numeroTubo,
                    int&nbsp;color)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Agrega una bola a un tubo si cumple con las reglas del juego.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -119,7 +125,9 @@ extends java.lang.Object</pre>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#quitarBola(int)">quitarBola</a></span>&#8203;(int&nbsp;numeroTubo)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Quita la bola de arriba del tubo seleccionado.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -129,13 +137,16 @@ extends java.lang.Object</pre>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verBola(int)">verBola</a></span>&#8203;(int&nbsp;numeroTubo)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Identifica la bola a mover para mostrarlo en la interfaz.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verificarVacio(int,boolean)">verificarVacio</a></span>&#8203;(int&nbsp;verificarTubo,
-              boolean&nbsp;tuboExtraActivo)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verificarVacio(int)">verificarVacio</a></span>&#8203;(int&nbsp;verificarTubo)</code></th>
+<td class="colLast">
+<div class="block">Verifica si un tubo esta vacio o no.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -169,6 +180,13 @@ extends java.lang.Object</pre>
 <h4>Tablero</h4>
 <pre>public&nbsp;Tablero&#8203;(Configuracion&nbsp;configuracion,
                int[]&nbsp;distribucion)</pre>
+<div class="block">Crea el objeto</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>configuracion</code> - Contiene todos los parametros del juego.</dd>
+<dd><code>distribucion</code> - Contiene la informacion sobre la distribucion de
+ las bolas.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -189,6 +207,12 @@ extends java.lang.Object</pre>
 <h4>agregarBola</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;agregarBola&#8203;(int&nbsp;numeroTubo,
                            int&nbsp;color)</pre>
+<div class="block">Agrega una bola a un tubo sin ninguna restrinccion.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>numeroTubo</code> - Tubo en el cual meter la bola.</dd>
+<dd><code>color</code> - Color de la bola</dd>
+</dl>
 </li>
 </ul>
 <a id="agregarBolaIniciado(int,int)">
@@ -199,6 +223,12 @@ extends java.lang.Object</pre>
 <h4>agregarBolaIniciado</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;agregarBolaIniciado&#8203;(int&nbsp;numeroTubo,
                                    int&nbsp;color)</pre>
+<div class="block">Agrega una bola a un tubo si cumple con las reglas del juego.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>numeroTubo</code> - Tubo en el cual meter la bola.</dd>
+<dd><code>color</code> - Color de la bola</dd>
+</dl>
 </li>
 </ul>
 <a id="quitarBola(int)">
@@ -208,6 +238,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>quitarBola</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;quitarBola&#8203;(int&nbsp;numeroTubo)</pre>
+<div class="block">Quita la bola de arriba del tubo seleccionado.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>numeroTubo</code> - Tubo en el cual sacar la bola.</dd>
+</dl>
 </li>
 </ul>
 <a id="verBola(int)">
@@ -217,16 +252,25 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>verBola</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;verBola&#8203;(int&nbsp;numeroTubo)</pre>
+<div class="block">Identifica la bola a mover para mostrarlo en la interfaz.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>numeroTubo</code> - Tubo en el cual meter</dd>
+</dl>
 </li>
 </ul>
-<a id="verificarVacio(int,boolean)">
+<a id="verificarVacio(int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>verificarVacio</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;verificarVacio&#8203;(int&nbsp;verificarTubo,
-                              boolean&nbsp;tuboExtraActivo)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;verificarVacio&#8203;(int&nbsp;verificarTubo)</pre>
+<div class="block">Verifica si un tubo esta vacio o no.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>verificarTubo</code> - Tubo a verificar si se encuentra vacio o no.</dd>
+</dl>
 </li>
 </ul>
 <a id="toString(int)">
@@ -236,6 +280,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;toString&#8203;(int&nbsp;cantTubosVisibles)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cantTubosVisibles</code> - Los tubos que se muestran en la interfaz.</dd>
+</dl>
 </li>
 </ul>
 <a id="juegoTerminado()">

@@ -16,9 +16,9 @@ public class Interfaz extends JOptionPane
     
     
     /**
-     * Crea el objeto, el titulo y la imagen que seran usadas en ventanas
+     * Crea el objeto, el titulo y la imagen que seran usadas en ventanas.
      * 
-     * @param elTitulo El itulo de ventanas.
+     * @param elTitulo El titulo de ventanas.
      */
     public Interfaz(String elTitulo)
     {
@@ -27,7 +27,7 @@ public class Interfaz extends JOptionPane
     
     
     /**
-     * Crea el objeto, el titulo y la imagen que seran usadas en ventanas
+     * Crea el objeto, el titulo y la imagen que seran usadas en ventanas.
      * 
      * @param elTitulo El itulo de ventanas.
      * @param nombreArchivoImagen El nombre del archivo de imagen.
@@ -38,8 +38,8 @@ public class Interfaz extends JOptionPane
         IMAGEN = new ImageIcon(this.getClass().getResource(nombreArchivoImagen));
     }
     
-     /**
-     * Muestra un mensaje
+    /**
+     * Muestra un mensaje.
      * 
      * @param elMensaje El mensaje mostrado al usuario en la interaccion.
      */
@@ -49,7 +49,7 @@ public class Interfaz extends JOptionPane
     }
     
     /**
-     * Pide al usuario insertar un dato por medio del teclado
+     * Pide al usuario insertar un dato por medio del teclado.
      * 
      * @param mensaje El mensaje mostrado al usuario en la interaccion.
      * @return La hilera insertada por el usuario.
@@ -62,7 +62,7 @@ public class Interfaz extends JOptionPane
     }
     
     /**
-     * Confirma con el usuario la opcion que ha tomado
+     * Confirma con el usuario la opcion que ha tomado.
      * 
      * @param mensaje El mensaje mostrado al usuario en la interaccion.
      * @return La opcion seleccionada.
