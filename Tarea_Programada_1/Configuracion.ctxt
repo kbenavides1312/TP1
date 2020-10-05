@@ -1,5 +1,7 @@
 #BlueJ class context
 comment0.target=Configuracion
+comment0.text=\r\n\ Esta\ clase\ recibe\ y\ guarda\ los\ parametros\ del\ juego.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
 comment1.params=colores\ tamanoTubo\ cantTubosVacios\ cantTubosVisibles
 comment1.target=Configuracion(java.lang.String[],\ int,\ int,\ int)
+comment1.text=\r\n\ Recibe\ y\ guarda\ los\ parametros\ del\ juego.\r\n\ \r\n\ @param\ colores\ Los\ colores\ de\ las\ bolas.\r\n\ @param\ tamanoTubo\ Cantidad\ de\ bolas\ que\ caben\ en\ un\ tubo.\r\n\ @param\ cantTubosVacios\ Cantidadad\ de\ tubos\ vacios.\r\n\ @param\ cantTubosVisibles\ Cantidad\ de\ tubos\ visibles.\r\n
 numComments=2

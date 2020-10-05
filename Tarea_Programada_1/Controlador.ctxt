@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=Controlador
+comment0.text=\r\n\ Esta\ clase\ contiene\ toda\ los\ parametros\ necesarios\ para\ que\ las\ otras\ \r\n\ clases\ funcionen\ de\ la\ manera\ deseada,\ asi\ como\ el\ metodo\ para\ iniciar\ el\r\n\ progrma.\r\n\ \r\n\ @author\ Kenneth\ Benavides\ Rojas\ y\ Jeremy\ Calvo\ Fern\u00E1ndez.\r\n\ @version\ 4/10/2020\r\n
 comment1.params=
 comment1.target=Controlador()
-comment1.text=\r\n\ Crea\ el\ objeto,\ la\ interfaz\ y\ al\ arbitro\r\n\ \r\n
+comment1.text=\r\n\ Crea\ el\ objeto,\ la\ interfaz\ y\ al\ arbitro.\r\n
 comment2.params=
 comment2.target=void\ iniciar()
-comment2.text=\r\n\ Interactua\ con\ el\ usuario\ usando\ el\ menu\ principal\r\n\ \r\n
+comment2.text=\r\n\ Inicia\ el\ juego\ mostrando\ el\ menu\ principal.\r\n
 comment3.params=parametros
 comment3.target=void\ main(java.lang.String[])
 comment3.text=\r\n\ Funcion\ main\r\n\ \r\n

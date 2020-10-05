@@ -1,7 +1,24 @@
+/**
+ * Esta clase contiene toda los parametros necesarios para que las otras 
+ * clases funcionen de la manera deseada, asi como el metodo para iniciar el
+ * progrma.
+ * 
+ * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
+ * @version 4/10/2020
+ */
 public class Controlador
 {
     private final String TITULO_VENTANAS = "Ball Sort Puzzle";
     private final String MENSAJE = "Escoja una opción";
+    private final String Creditos = "Programa: Ball Sort Puzzle"
+    +"\nAutores: Kenneth Benavides Rojas y Jeremy Calvo Fernández."
+    + "\nVersion: 4/10/20";
+    private final String Ayuda = "Las reglas del juego son simples:"
+    + "\n1. Para ganar se ocupa tener todas bolas de un mismo color en un solo tubo."
+    + "\n2. Solo se puede poner una bola en un tubo que este vacio o si la bola "
+    + "superior del tubo es del mismo color a la que se quiere insertar."
+    + "\n3. Si se quiere un tubo extra puede precionar el boton 'Tubo extra' "
+    + "pero esto le costara 5 movimientos.";
     private final String[] OPCIONES_INICIAL = {"Jugar", "Creditos", "Ayuda","Salir"}; 
     private final String[] OPCIONES_EN_JUEGO = {"Nuevo juego", "Volver al juego", "Creditos", "Ayuda","Salir"}; 
     private final String[] COLORES = {"RO","AZ","VE","AM","MO"}; 
@@ -13,8 +30,7 @@ public class Controlador
     private Configuracion configuracion;
     
     /**
-     * Crea el objeto, la interfaz y al arbitro
-     * 
+     * Crea el objeto, la interfaz y al arbitro.
      */
     public Controlador(){
         interfaz = new Interfaz(TITULO_VENTANAS);
@@ -27,8 +43,7 @@ public class Controlador
     }
     
     /**
-     * Interactua con el usuario usando el menu principal
-     * 
+     * Inicia el juego mostrando el menu principal.
      */
     public void iniciar(){
         int opcion;
@@ -55,14 +70,14 @@ public class Controlador
                             break;
                             
                         case 1:
-                            interfaz.decirMensaje("Autores:\n"
-                                                    +"    Kenneth Benavides (B10937)\n"
-                                                    +"    Jeremy Calvo (C01507)");
+                            interfaz.decirMensaje(Creditos);
                             break;
                             
                         case 2:
-                            interfaz.decirMensaje("");
+                            interfaz.decirMensaje(Ayuda);
                             break;
+                            
+                        
                     }
                     
                 }

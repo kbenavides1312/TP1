@@ -4,6 +4,13 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+/**
+ * Esta clase tiene todos los metodos necesarios para interactuar con los
+ * tubos y bolas requeridas en el juego.
+ * 
+ * @author Kenneth Benavides Rojas y Jeremy Calvo Fernández.
+ * @version 4/10/2020
+ */
 public class Tablero
 {
     private int[][] tubos;
@@ -11,6 +18,13 @@ public class Tablero
     private int[] niveles;
     private int[] nivelesCompletos;
     
+    /**
+     * Crea el objeto
+     * 
+     * @param configuracion Contiene todos los parametros del juego.
+     * @param distribucion Contiene la informacion sobre la distribucion de
+     * las bolas.
+     */
     public Tablero(Configuracion configuracion ,int[] distribucion){
         this.configuracion = configuracion;
         this.tubos = new int[configuracion.cantTubos][configuracion.tamanoTubo];
@@ -30,6 +44,12 @@ public class Tablero
         }
     }
     
+    /**
+     * Agrega una bola a un tubo sin ninguna restrinccion.
+     * 
+     * @param numeroTubo Tubo en el cual meter la bola.
+     * @param color Color de la bola
+     */
     public boolean agregarBola(int numeroTubo, int color){
         if (niveles[numeroTubo]<configuracion.tamanoTubo){
             tubos[numeroTubo][niveles[numeroTubo]] = color;
@@ -43,10 +63,20 @@ public class Tablero
         }
     }
     
+    /**
+     * Agrega una bola a un tubo si cumple con las reglas del juego.
+     * 
+     * @param numeroTubo Tubo en el cual meter la bola.
+     * @param color Color de la bola
+     */
     public boolean agregarBolaIniciado(int numeroTubo, int color){
         int bolaAnterior;
         int ultimo;
-        ultimo = niveles[numeroTubo]-1;
+        if(numeroTubo != -1){
+            ultimo = niveles[numeroTubo]-1;
+        }else{
+            return false;
+        }
         if (niveles[numeroTubo]>0){
             bolaAnterior = tubos[numeroTubo][ultimo];
         }else{
@@ -59,6 +89,12 @@ public class Tablero
         }
     }
     
+    /**
+     * Quita la bola de arriba del tubo seleccionado.
+     * 
+     * @param numeroTubo Tubo en el cual sacar la bola.
+     * 
+     */
     public int quitarBola(int numeroTubo){
         int bola;
         int ultimo = niveles[numeroTubo]-1;
@@ -75,6 +111,11 @@ public class Tablero
         return bola;
     }
     
+    /**
+     * Identifica la bola a mover para mostrarlo en la interfaz.
+     * 
+     * @param numeroTubo Tubo en el cual meter 
+     */
     public int verBola (int numeroTubo){
         int bola;
         int ultimo = niveles[numeroTubo]-1;
@@ -82,10 +123,20 @@ public class Tablero
         return bola;
     } 
     
-    public boolean verificarVacio(int verificarTubo, boolean tuboExtraActivo){
+    /**
+     * Verifica si un tubo esta vacio o no.
+     * 
+     * @param verificarTubo Tubo a verificar si se encuentra vacio o no.
+     */
+    public boolean verificarVacio(int verificarTubo){
         return (tubos[verificarTubo][0] == -1);
     }
     
+    /**
+     * Contruye los tubos que se muestran en la interfaz.
+     * 
+     * @param cantTubosVisibles Los tubos que se muestran en la interfaz.
+     */
     public String toString(int cantTubosVisibles){
         String result = "";
         for (int tubo=1; tubo<=cantTubosVisibles; tubo++)
@@ -108,6 +159,9 @@ public class Tablero
         return result;
     }
     
+    /**
+     * Verifica si el jugador gano el juego.
+     */
     public boolean juegoTerminado(){
         for (int tubo=0; tubo<8; tubo++){
             if(nivelesCompletos[tubo]>0 && nivelesCompletos[tubo]<configuracion.tamanoTubo){
@@ -116,4 +170,4 @@ public class Tablero
         }
         return true;
     }
-}
+} 
