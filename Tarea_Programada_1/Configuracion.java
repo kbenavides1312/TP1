@@ -6,7 +6,7 @@
  */
 public class Configuracion
 {
-    public final String[] colores;
+    public final String[] colores; 
     public final int cantColores;
     public final int tamanoTubo;
     public final int cantTubosVacios;
