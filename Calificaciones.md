@@ -49,21 +49,26 @@ Observaciones:
 
 
 ## Etapa IV
-**Revisada por:**                  
+**Revisada por:**  Reichel Mora                 
 Observaciones:
 
--  
--
--
+-  Cada clase debe responder a la representación de alguno de los objetos que interviene en el desarollo de juego. Configuracion no parece ser un objeto que intervenga en el desarrollo del juego. No se puede diferenciar de forma clara la participación de estas dos clases(Configuracion y Computadora) en el desarrollo del juego.(-5pts)
+-  +10 pts por llenar la matriz de forma aleatoria,
 
 | Valor          | Nota    | 
 | :-------------:|:-------:|
-| 75             |         |
+| 75             |   70    |
 
 ## Calificación Final 
 
-
+Kenneth Benavides: 
 | Valor          | Nota    | 
 | :-------------:|:-------:|
-| 100            |         |
+| 100            |    94   |
+
+
+Jeremy Calvo: 
+| Valor          | Nota    | 
+| :-------------:|:-------:|
+| 100            |    86   |
 
